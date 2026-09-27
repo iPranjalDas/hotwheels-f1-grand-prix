@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --hw-orange: #FF3E00;
+    --hw-gold: #FFD700;
+    --f1-red: #E10600;
+    --f1-cyan: #00E5FF;
+    --neon-green: #00FF66;
+    --carbon-dark: #0B0C10;
+    --carbon-grid: #131720;
+    --track-orange: #FF5500;
+  }
+
+  body {
+    background-color: #08090C;
+    color: #F3F4F6;
+    font-family: 'Exo 2', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom Racing Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0B0C10;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #FF3E00 0%, #FFD700 100%);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #FF5500;
+  }
+}
+
+.font-racing {
+  font-family: 'Orbitron', monospace;
+}
+
+.font-bebas {
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.font-telemetry {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Carbon weave background pattern */
+.bg-carbon-pattern {
+  background-color: #0B0C10;
+  background-image: 
+    linear-gradient(45deg, rgba(255, 255, 255, 0.02) 25%, transparent 25%), 
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.02) 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.02) 75%), 
+    linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.02) 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+}
+
+/* Speed line streaks */
+.bg-speed-lines {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(255, 62, 0, 0.04) 0px,
+    rgba(255, 62, 0, 0.04) 1px,
+    transparent 1px,
+    transparent 40px
+  );
+}
+
+/* Hot Wheels Orange Track glow */
+.track-glow {
+  filter: drop-shadow(0 0 12px rgba(255, 62, 0, 0.7)) drop-shadow(0 0 24px rgba(255, 85, 0, 0.4));
+}
+
+.cyan-glow {
+  filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.6));
+}
+
+.green-glow {
+  filter: drop-shadow(0 0 10px rgba(0, 255, 102, 0.6));
+}
+
+/* Chequered flag border */
+.chequered-border {
+  background-image: repeating-linear-gradient(
+    45deg,
+    #FFFFFF 0, #FFFFFF 10px,
+    #111111 10px, #111111 20px
+  );
+}
+
+/* Pulse animation for DRS / RPM shift lights */
+@keyframes rev-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+.animate-rev {
+  animation: rev-pulse 0.4s infinite ease-in-out;
+}
